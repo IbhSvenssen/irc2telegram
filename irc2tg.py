@@ -79,7 +79,8 @@ def main():
       # get the message to look for commands
       message = ircmsg.split('PRIVMSG', 1)[1].split(':', 1)[1]
       print(message)
-      bot.sendMessage(telegram_chat_id, name + ": " + message)
+      if name != botnick:
+          bot.sendMessage(telegram_chat_id, name + ": " + message)
 
 #start main functioin
 main()
